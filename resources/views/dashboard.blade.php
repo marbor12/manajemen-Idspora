@@ -78,8 +78,8 @@
 
                 <!-- Tasks Section -->
                 <div class="bg-white border rounded p-4 mb-6">
-                    
-                    
+
+
                     <div class="flex justify-between items-center mb-4">
                         <h2 class="text-lg font-bold">Recent Tasks</h2>
                         <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm">Add</a>
@@ -145,7 +145,7 @@
                     </table>
 
                     <div class="flex justify-end mt-4 space-x-2">
-                    <a href="#" class="text-blue-500 text-sm">View All</a>
+                        <a href="#" class="text-blue-500 text-sm">View All</a>
                     </div>
                 </div>
 
@@ -174,7 +174,7 @@
                         </li>
                     </ul>
                     <div class="flex justify-end mt-4 space-x-2">
-                    <a href="#" class="text-blue-500 text-sm">View All</a>
+                        <a href="#" class="text-blue-500 text-sm">View All</a>
                     </div>
                 </div>
             </div>

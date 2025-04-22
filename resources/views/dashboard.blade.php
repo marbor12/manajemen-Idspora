@@ -80,6 +80,10 @@
                 <div class="bg-white border rounded p-4 mb-6">
                     <div class="flex justify-between items-center mb-4">
                         <h2 class="text-lg font-bold">Recent Tasks</h2>
+                        <a href="{{ route('tasks.create') }}"
+                            class="inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition">
+                            + Add
+                        </a>
                     </div>
 
                     <table class="w-full">
@@ -89,54 +93,46 @@
                                 <th class="text-left py-2">Status</th>
                                 <th class="text-left py-2">Due Date</th>
                                 <th class="text-left py-2">PIC</th>
-                                <th class="text-left py-2">Add</th>
                                 <th class="text-left py-2">Evidence</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="border-b">
                                 <td class="py-2">Create homepage design</td>
-                                <td class="py-2"><span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs">In
-                                        Progress</span></td>
+                                <td class="py-2">
+                                    <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded text-xs">In Progress</span>
+                                </td>
                                 <td class="py-2">Aug 15, 2024</td>
                                 <td class="py-2">Agvin</td>
-                                <td class="py-2"><a href="#" class="text-blue-500 text-sm">Add</a></td>
                                 <td class="py-2">
-                                    @if (false) {{-- Ganti dengan kondisi real evidence --}}
-                                        <a href="#" class="text-blue-500 text-sm">Lihat</a>
+                                    {{-- Cek apakah ada evidence --}}
+                                    @if(isset($tasks[0]['evidence']))
+                                        <a href="{{ $tasks[0]['evidence'] }}" class="text-blue-600 underline">Lihat</a>
                                     @else
-                                        <span class="text-gray-500 text-sm">Belum tersedia</span>
+                                        <span class="text-gray-500 italic">Belum tersedia</span>
                                     @endif
                                 </td>
                             </tr>
                             <tr class="border-b">
                                 <td class="py-2">Database setup</td>
-                                <td class="py-2"><span
-                                        class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">Completed</span></td>
+                                <td class="py-2">
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs">Completed</span>
+                                </td>
                                 <td class="py-2">Aug 10, 2024</td>
                                 <td class="py-2">-</td>
-                                <td class="py-2"><a href="#" class="text-blue-500 text-sm">Add</a></td>
                                 <td class="py-2">
-                                    @if (true)
-                                        <a href="#" class="text-blue-500 text-sm">Lihat</a>
-                                    @else
-                                        <span class="text-gray-500 text-sm">Belum tersedia</span>
-                                    @endif
+                                    <span class="text-gray-500 italic">Belum tersedia</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="py-2">User authentication</td>
-                                <td class="py-2"><span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">To
-                                        Do</span></td>
+                                <td class="py-2">
+                                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">To Do</span>
+                                </td>
                                 <td class="py-2">Aug 20, 2024</td>
                                 <td class="py-2">-</td>
-                                <td class="py-2"><a href="#" class="text-blue-500 text-sm">Add</a></td>
                                 <td class="py-2">
-                                    @if (false)
-                                        <a href="#" class="text-blue-500 text-sm">Lihat</a>
-                                    @else
-                                        <span class="text-gray-500 text-sm">Belum tersedia</span>
-                                    @endif
+                                    <span class="text-gray-500 italic">Belum tersedia</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -144,9 +140,12 @@
 
                     <div class="flex justify-end mt-4">
                         <a href="{{ route('tasks') }}"
-                            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm">View All</a>
+                            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm">
+                            View All
+                        </a>
                     </div>
                 </div>
+
 
 
                 <!-- Events Section -->

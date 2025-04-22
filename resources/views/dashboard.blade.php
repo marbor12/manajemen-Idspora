@@ -78,12 +78,11 @@
 
                 <!-- Tasks Section -->
                 <div class="bg-white border rounded p-4 mb-6">
+                    
+                    
                     <div class="flex justify-between items-center mb-4">
                         <h2 class="text-lg font-bold">Recent Tasks</h2>
-                        <a href="{{ route('tasks.create') }}"
-                            class="inline-block px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition">
-                            + Add
-                        </a>
+                        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm">Add</a>
                     </div>
 
                     <table class="w-full">
@@ -105,11 +104,10 @@
                                 <td class="py-2">Aug 15, 2024</td>
                                 <td class="py-2">Agvin</td>
                                 <td class="py-2">
-                                    {{-- Cek apakah ada evidence --}}
-                                    @if(isset($tasks[0]['evidence']))
-                                        <a href="{{ $tasks[0]['evidence'] }}" class="text-blue-600 underline">Lihat</a>
+                                    @if (false) {{-- Ganti dengan kondisi real evidence --}}
+                                        <a href="#" class="text-blue-500 text-sm">Lihat</a>
                                     @else
-                                        <span class="text-gray-500 italic">Belum tersedia</span>
+                                        <span class="text-gray-500 text-sm">Belum tersedia</span>
                                     @endif
                                 </td>
                             </tr>
@@ -121,7 +119,11 @@
                                 <td class="py-2">Aug 10, 2024</td>
                                 <td class="py-2">-</td>
                                 <td class="py-2">
-                                    <span class="text-gray-500 italic">Belum tersedia</span>
+                                    @if (true)
+                                        <a href="#" class="text-blue-500 text-sm">Lihat</a>
+                                    @else
+                                        <span class="text-gray-500 text-sm">Belum tersedia</span>
+                                    @endif
                                 </td>
                             </tr>
                             <tr>
@@ -132,19 +134,21 @@
                                 <td class="py-2">Aug 20, 2024</td>
                                 <td class="py-2">-</td>
                                 <td class="py-2">
-                                    <span class="text-gray-500 italic">Belum tersedia</span>
+                                    @if (false)
+                                        <a href="#" class="text-blue-500 text-sm">Lihat</a>
+                                    @else
+                                        <span class="text-gray-500 text-sm">Belum tersedia</span>
+                                    @endif
                                 </td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <div class="flex justify-end mt-4">
-                        <a href="{{ route('tasks') }}"
-                            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm">
-                            View All
-                        </a>
+                    <div class="flex justify-end mt-4 space-x-2">
+                    <a href="#" class="text-blue-500 text-sm">View All</a>
                     </div>
                 </div>
+
 
 
 
@@ -152,6 +156,7 @@
                 <div class="bg-white border rounded p-4">
                     <div class="flex justify-between items-center mb-4">
                         <h2 class="text-lg font-bold">Upcoming Events</h2>
+                        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded text-sm">Add</a>
                     </div>
 
                     <ul class="space-y-3">
@@ -168,7 +173,9 @@
                             <div class="text-sm text-gray-500">August 18, 2024 - 2:00 PM</div>
                         </li>
                     </ul>
-                    <a href="{{ route('events') }}" class="text-blue-500">View All</a>
+                    <div class="flex justify-end mt-4 space-x-2">
+                    <a href="#" class="text-blue-500 text-sm">View All</a>
+                    </div>
                 </div>
             </div>
         </div>
